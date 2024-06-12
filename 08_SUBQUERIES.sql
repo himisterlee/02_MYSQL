@@ -132,7 +132,7 @@ where
 -- 카테고리 별 평균 가격이 가장 비싼 메뉴 조회
 Select
     category_code,
-    maxs(menu_price)
+    max(menu_price)
 from
     tbl_menu
 group by
