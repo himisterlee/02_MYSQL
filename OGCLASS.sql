@@ -1,9 +1,11 @@
+-- 테이블 생성
 create table if not exists favorite_subject
 (
     subject_no int auto_increment primary key,
     subject_name varchar(255) not null unique
 );
 
+-- 데이터 삽입
 insert into favorite_subject
 values(null, 'JAVA'),
       (null, 'MYSQL'),
@@ -14,9 +16,9 @@ values(null, 'JAVA'),
 
 
 select * from favorite_subject;
+describe favorite_subject; -- 테이블 구성 확인
 
-
-
+-- 테이블 생성
 create table if not exists class
 (
     student_no int auto_increment primary key,
@@ -30,6 +32,7 @@ create table if not exists class
         references favorite_subject (subject_no)
 );
 
+-- 데이터 삽입
 insert into class
 (student_no, student_name, gender, github_id, email, mbti, subject_no)
 values(null, '박태근', '남', 'Ohgiraffers-bear', 'bear.ohgiraffers@gmail.com', null, 5),
@@ -51,4 +54,5 @@ values(null, '박태근', '남', 'Ohgiraffers-bear', 'bear.ohgiraffers@gmail.com
       (null, '강연진', '여', 'kangyeonjin', 'yeonjin917n.n@gmail.com', null, 5),
       (null, '강진영', '남', 'weed97', 'weed9935@gmail.com', null, 2);
 
-select * from class
+select * from class;
+describe class;
